@@ -44,7 +44,7 @@ namespace lab8
             //se guarda a un alumno con sus notas
             NotasAlumno notasAlumno = new NotasAlumno();
             notasAlumno.Nombre = textBoxNombre.Text;
-            notasAlumno.Nota = notaTemp;
+            notasAlumno.Nota = notaTemp.GetRange(0, notaTemp.Count);
             //guarda a ese alumno en el listado de notas de alumnos
             NotasAlumnos.Add(notasAlumno);
             GrabarNotas();
