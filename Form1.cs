@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Newtonsoft.Json;
 namespace lab8
 {
     public partial class Form1 : Form
@@ -20,7 +14,19 @@ namespace lab8
         {
             InitializeComponent();
         }
+        private void Grabar()
+        {
+            //recordatorio instalar paquetes json
+            //Se serializa (convierte) la lista en formato Json y se guarda en una variable de tipo string
+            string json = JsonConvert.SerializeObject(NotasAlumnos);
 
+            //El nombre del archivo
+            string archivo = "Datos.json";
+
+            //Se escribe la variable que contiene el json al archivo en un solo paso
+            //con WriteAllText se escribe todo de un solo
+            System.IO.File.WriteAllText(archivo, json);       
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
