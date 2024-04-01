@@ -14,7 +14,7 @@ namespace lab8
         {
             InitializeComponent();
         }
-        private void Grabar()
+        public void GrabarNotas()
         {
             //recordatorio instalar paquetes json
             //Se serializa (convierte) la lista en formato Json y se guarda en una variable de tipo string
@@ -47,10 +47,11 @@ namespace lab8
             notasAlumno.Nota = notaTemp;
             //guarda a ese alumno en el listado de notas de alumnos
             NotasAlumnos.Add(notasAlumno);
+            GrabarNotas();
             //borra las listas temporales
             notaTemp.Clear();
 
-
+           
         }
     }
 }
